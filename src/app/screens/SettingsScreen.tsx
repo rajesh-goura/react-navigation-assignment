@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../index'; // Adjust the import path as necessary
+import { RootStackParamList } from '../index'; 
 
 type SettingsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Profile'>;
 
