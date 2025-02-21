@@ -9,16 +9,18 @@ const HomeScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <Text>HomeScreen</Text>
-      <Button
-        title="Doing page"
-        onPress={() => navigation.navigate('Work',{screen:"Doing"})}
-      />
-      <Button
-        title="Profile page"
-        onPress={() => navigation.navigate('Profile')}
-      />
-      
-
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Doing page"
+          onPress={() => navigation.navigate('Work',{screen:"Doing"})}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Profile page"
+          onPress={() => navigation.navigate('Profile')}
+        />
+      </View>
     </View>
   );
 };
@@ -30,5 +32,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  buttonContainer: {
+    marginVertical: 10,
   },
 });

@@ -1,7 +1,3 @@
-
-
-
-
 import 'react-native-gesture-handler';
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -15,12 +11,12 @@ import HomeScreen from "./screens/HomeScreen";
 import DoneScreen from "./screens/DoneScreen";
 import DoingScreen from "./screens/DoingScreen";
 import SettingsScreen from "./screens/SettingsScreen";
-import ProfileScreen from "./screens/ProfileScreen";  
+import ProfileScreen from "./screens/ProfileScreen";
 
 export type RootStackParamList = {
   Welcome: undefined;
   Main: undefined;
-  Profile: undefined;  
+  Profile: undefined;
 };
 
 export type BottomTabParamList = {
@@ -57,17 +53,17 @@ const WorkTabs = () => {
 const MyTabs = () => {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="Home" component={HomeScreen} />
-      <BottomTab.Screen name="Work" component={WorkTabs} />
+      <BottomTab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+      <BottomTab.Screen name="Work" component={WorkTabs} options={{ headerShown: false }}/>
     </BottomTab.Navigator>
   );
 };
 
 const DrawerContent = () => {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator >
       <Drawer.Screen name="DashBoard" component={MyTabs}  />
-      <Drawer.Screen name="Settings" component={SettingsScreen} />
+      <Drawer.Screen name="Settings" component={SettingsScreen}  />
       <Drawer.Screen name='Profile' component={ProfileScreen}/>
     </Drawer.Navigator>
   );
@@ -77,8 +73,8 @@ const MainStack = () => {
   return (
     <Stack.Navigator initialRouteName="Welcome">
       <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }}/>
-      <Stack.Screen name="Main" component={DrawerContent} options={{ headerShown: false }} />
-      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }}/>  
+      <Stack.Screen name="Main" component={DrawerContent} options={{ headerShown: false }}/>
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }}/>
     </Stack.Navigator>
   );
 };
@@ -92,3 +88,4 @@ const MainNavigation = () => {
 };
 
 export default MainNavigation;
+
